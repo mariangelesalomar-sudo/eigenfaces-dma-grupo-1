@@ -64,7 +64,9 @@ en la **Celda 3** del notebook.
 ## 👥 Grupo de trabajo
 
 - Mariángeles Alomar
-- _(agregar nombres de los demás integrantes)_
+- Judith Luna
+- Federico Spinelli
+- Juan Ignacio Cacchione
 
 ## 📚 Referencias
 
