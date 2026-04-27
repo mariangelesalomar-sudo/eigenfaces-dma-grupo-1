@@ -1,0 +1,75 @@
+# =====================================================
+# IMPORTANTÍSIMO: nunca subir las fotos de los alumnos
+# =====================================================
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.HEIC
+*.JPG
+*.JPEG
+*.PNG
+
+# Excepción: si querés mantener gráficos generados por el notebook,
+# listalos explícitamente acá (ejemplo):
+# !docs/imagen_diagrama.png
+
+# =====================================================
+# Datos procesados (pesados, regenerables)
+# =====================================================
+*.npy
+*.npz
+datos_procesados/
+checkpoint*
+
+# =====================================================
+# Notebooks: salidas y checkpoints
+# =====================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# =====================================================
+# Python
+# =====================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# =====================================================
+# Sistema operativo
+# =====================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =====================================================
+# IDEs / Editores
+# =====================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =====================================================
+# Google Colab / Drive
+# =====================================================
+.drive/
+sample_data/
+
+# =====================================================
+# Credenciales (por las dudas, nunca subir)
+# =====================================================
+*.env
+.env
+credentials.json
+token.json
