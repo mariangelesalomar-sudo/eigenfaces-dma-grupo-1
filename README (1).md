@@ -11,7 +11,7 @@ El notebook de clasificación espera encontrar estos archivos:
 
 ## 🚀 Cómo ejecutar
 
-### Para clasificar fotos nuevas (lo que necesita el profesor):
+### Para clasificar fotos nuevas (lo que necesita nuestro estimado profesor):
 
 1. Abrir `GRUPO_1__zBackPropagation_multiclase.ipynb` en Google Colab
 2. Correr todas las celdas en orden
@@ -31,7 +31,7 @@ El notebook de clasificación espera encontrar estos archivos:
 3. Ejecutar las celdas en orden (la celda 7 tarda ~15-20 minutos)
 4. El procesamiento usa checkpoints: si Colab se reinicia, retoma desde donde quedó
 
-## 📊 Resultados
+## Resultados
 
 | Métrica | Valor |
 |---|---|
@@ -42,19 +42,12 @@ El notebook de clasificación espera encontrar estos archivos:
 | Umbral de desconocido | 0.68 |
 | Fotos nuevas individuales | 7/14 correctas (50%) |
 
-## ⚠️ Privacidad
 
-Las fotos de los alumnos **NO** se incluyen en este repositorio. Cada integrante del grupo debe tener acceso a la carpeta compartida de Google Drive.
 
-## 👥 Grupo 1
+## Grupo 1 - Integrantes
 
 - Mariangeles Alomar
 - Judith Luna
 - Federico Spinelli
 - Juan Ignacio Cacchione
 
-## 📚 Referencias
-
-- Turk, M., & Pentland, A. (1991). *Eigenfaces for recognition.* Journal of Cognitive Neuroscience.
-- DeepFace: https://github.com/serengil/deepface
-- scikit-learn PCA: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
