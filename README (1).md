@@ -1,75 +1,60 @@
-# Reconocimiento facial con Eigenfaces — Caras de la clase
+## 🔗 Archivos en Google Drive
 
-Trabajo grupal para la materia **Data Mining Avanzado**
-Maestría en Ciencia de Datos · 2026 — 2° Cuatrimestre
+Los modelos entrenados y datos procesados están en la carpeta compartida de Drive:
 
-## 📋 Descripción
+**[Link a carpeta de Drive](ACÁ PEGAR EL LINK)**
 
-Implementación clásica de **Eigenfaces** (PCA aplicado a imágenes de caras)
-para detectar y comparar las caras de los 14 alumnos de la clase.
-
-El pipeline parte de fotos individuales de cada alumno (en distintos formatos
-y con distintas variantes de nombre en los archivos) y produce:
-
-- Una matriz de distancias entre todos los alumnos.
-- Un ranking de los pares más parecidos / menos parecidos.
-- La "cara gemela" de cada alumno dentro del grupo.
-
-## 🧪 Pipeline
-
-1. **Carga de fotos** desde Google Drive (formatos `.jpg`, `.jpeg`, `.png`, `.heic`).
-2. **Detección de rostros** con DeepFace (RetinaFace), con respaldo en Haar Cascade
-   para imágenes donde DeepFace no detecta cara.
-3. **Recorte por borde oval** del rostro (no rectangular) usando los landmarks
-   faciales de DeepFace, y conversión a escala de grises 30×30 px.
-4. **Reducción de dimensionalidad** con PCA → Eigenfaces (~50 componentes).
-5. **Cálculo de vector promedio** por alumno (cada alumno aporta varias fotos).
-6. **Matriz de distancias euclidianas** entre vectores promedio.
-7. **Ranking** de pares más / menos parecidos.
-
-## 📁 Estructura del repositorio
-
-```
-eigenfaces-dma/
-├── eigenfaces_caras_clase.ipynb   # Notebook principal (Google Colab)
-├── requirements.txt               # Librerías necesarias
-├── .gitignore                     # Evita subir fotos al repo
-└── README.md                      # Este archivo
-```
-
-## ⚠️ Importante: privacidad de las fotos
-
-**Las fotos de los alumnos NO se incluyen en este repositorio.**
-
-Cada integrante del grupo debe tener acceso a la carpeta compartida de Google Drive
-con las imágenes. La ruta usada en el notebook es:
-
-```
-/My Drive/MAESTRIA CS DATOS/2026 - 2 Cuatrimestre/Data Mining Avanzado/Nuestras caras
-```
-
-Si trabajan en una carpeta distinta, modifiquen la variable `ruta_fotos`
-en la **Celda 3** del notebook.
+El notebook de clasificación espera encontrar estos archivos:
+- `DMA/datos_30x30/pca_model.pkl` — modelo PCA entrenado
+- `DMA/datos_30x30/imagenes_repr.npz` — caras representativas para comparación visual
+- `DMA/nn_pca_v8/red.pkl` — red neuronal entrenada
 
 ## 🚀 Cómo ejecutar
 
-1. Abrir el notebook `eigenfaces_caras_clase.ipynb` en **Google Colab**.
-2. Asegurarse de tener acceso a la carpeta compartida de Google Drive.
-3. Ejecutar las celdas en orden. La primera vez:
-   - Las celdas 1 y 2 instalan e importan librerías.
-   - La celda 3 monta el Drive (pide autorización).
-   - La celda 7 puede tardar ~15-20 minutos (procesa todas las fotos).
-4. El procesamiento usa **checkpoints**: si Colab se reinicia, retoma desde donde quedó.
+### Para clasificar fotos nuevas (lo que necesita el profesor):
 
-## 👥 Grupo de trabajo
+1. Abrir `GRUPO_1__zBackPropagation_multiclase.ipynb` en Google Colab
+2. Correr todas las celdas en orden
+3. En la **última celda (Demo Final)**, subir una foto y la red dice quién es
+4. Si la confianza es menor a 0.68, la red clasifica como **"desconocido"**
 
-- Mariángeles Alomar
+### Para clasificar varias fotos a la vez:
+
+1. Colocar las fotos en la carpeta `Fotos individuales/` en Drive
+2. Las fotos deben tener el nombre del alumno como prefijo (ej: `juan_perez_01.jpg`)
+3. Correr la **sección 4** del notebook de clasificación
+
+### Para re-generar los Eigenfaces desde cero:
+
+1. Abrir `eigenfaces_caras_clase.ipynb` en Google Colab
+2. Asegurarse de tener acceso a la carpeta de fotos en Drive
+3. Ejecutar las celdas en orden (la celda 7 tarda ~15-20 minutos)
+4. El procesamiento usa checkpoints: si Colab se reinicia, retoma desde donde quedó
+
+## 📊 Resultados
+
+| Métrica | Valor |
+|---|---|
+| Arquitectura | 80 → [20] → 14 (tansig + logsig) |
+| Train error rate | 18.4% |
+| **Test error rate** | **39.3%** |
+| Accuracy | 60.7% (8.5x mejor que azar) |
+| Umbral de desconocido | 0.68 |
+| Fotos nuevas individuales | 7/14 correctas (50%) |
+
+## ⚠️ Privacidad
+
+Las fotos de los alumnos **NO** se incluyen en este repositorio. Cada integrante del grupo debe tener acceso a la carpeta compartida de Google Drive.
+
+## 👥 Grupo 1
+
+- Mariangeles Alomar
 - Judith Luna
 - Federico Spinelli
 - Juan Ignacio Cacchione
 
 ## 📚 Referencias
 
-- Turk, M., & Pentland, A. (1991). *Eigenfaces for recognition*. Journal of Cognitive Neuroscience.
-- DeepFace: <https://github.com/serengil/deepface>
-- scikit-learn PCA: <https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html>
+- Turk, M., & Pentland, A. (1991). *Eigenfaces for recognition.* Journal of Cognitive Neuroscience.
+- DeepFace: https://github.com/serengil/deepface
+- scikit-learn PCA: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
