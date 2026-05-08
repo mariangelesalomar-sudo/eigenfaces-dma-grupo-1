@@ -2,7 +2,7 @@
 
 Los modelos entrenados y datos procesados están en la carpeta compartida de Drive:
 
-**[Link a carpeta de Drive](ACÁ PEGAR EL LINK)**
+**[[Link a carpeta de Drive] (https://drive.google.com/drive/folders/1vGLFDlNlFKpVFhBRHy5VUUWa0kcy7Yaz?usp=sharing)**
 
 El notebook de clasificación espera encontrar estos archivos:
 - `DMA/datos_30x30/pca_model.pkl` — modelo PCA entrenado
